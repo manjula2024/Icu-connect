@@ -22,9 +22,6 @@ import { MatCardModule } from '@angular/material/card';
 
 import { MatSliderModule } from '@angular/material/slider';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
