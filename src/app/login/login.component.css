@@ -12,6 +12,36 @@
 	-o-background-size: cover;
 	background-size: cover;
 }
+.input-sm{
+	background-color: #eff6f7;
+    border: none;
+    color: white;
+	padding: 16px 160px 0px 0px;
+	margin-bottom: 5px;
+    text-align:left;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: bolder;
+  -webkit-border-radius: 5px;
+    border-radius: 6px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+
+}
+.input-sm:hover{
+	-webkit-border-radius: 6px;
+    border-radius: 5px;
+	color: black;
+	
+    font-weight: bolder;
+    background-color: #fff;
+    border: 2px solid gray;
+  
+}
 
 #login_pg {
 	display: table;
@@ -38,14 +68,14 @@
 	font-size: 35px;
 	color: white;
  margin-left: 200px;
- position: relative;
+ position: fixed;
 
 }
 
 #login_pg .login_form .header {
 	display: table;
 	width: 100%;
-	min-height: 50px;
+	min-height: 30px;
 	background-color: #122b40;
 }
 
@@ -66,7 +96,7 @@
 #login_pg .login_form .login_body {
 	position: relative;
 	display: block;
-	min-height: 200px;
+	min-height: 250px;
 	width: 100%;
 	border-radius: 0 0 5px 5px;
 	background-color: rgba(0, 0, 0, 0.5);
