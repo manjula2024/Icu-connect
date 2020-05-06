@@ -1,4 +1,4 @@
-<div class="login_container" >
+<div class="login_container">
     <section id="login_pg">
         <div class="form_cover">
             <form class="login_form">
@@ -10,15 +10,29 @@
                         <label class="lbl"><i class="fa fa-user"></i>&nbsp;User Name</label><br>
                         <input class="form-control input-sm" type="text" ng-model="userCredentials.username"/>
                     </div>
-                    <br>
                     <div class="input_row">
-                        <label class="lbl"><i class="fa fa-eye"></i>&nbsp;Password</label><br
+                        <label class="lbl"><i class="fa fa-eye"></i>&nbsp;Password</label><br>
                         <input class="form-control input-sm" type="password" ng-model="userCredentials.password"/>
                      	<div class="failure">{{invalid}}</div>
                     </div>
-                   
-                    <div class="input_row">
-                        <button class="form-control btn-sm submit" type="submit" ng-click="login(userCredentials)">Submit</button>
+                     <div class="row justify-content-center">
+                        <button
+                            style="width: 90%;margin-left: 20px;  color: white; background: #0097a7; font-family: 'Didact Gothic'; font-size: 1.2rem;"
+                            mat-raised-button (click)="register()">Submit</button>
+                    </div>
+                    <div class="row" *ngIf="showMsg" style="display: inline;text-align: center;">
+                        <div class="col-12">
+                            <p class="alert alert-success">
+                                <strong>Your Details Successfully submitted..!</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row" *ngIf="showWarn" style="display: inline;text-align: center;">
+                        <div class="col-12">
+                            <p class="alert alert-warning">
+                                <strong>{{error}}</strong>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </form>
