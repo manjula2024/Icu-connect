@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
  import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-
+ import { AuthserviceService } from '../authservice.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 
@@ -26,16 +26,13 @@ export class LoginComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
-    // private service: UserService,
-    // private dialog: MatDialog,
-    private router: Router, 
-    // private Authservice: AuthAuthenticationService
+     private router: Router, 
+     private Authservice: AuthserviceService
     ) { }
 
   ngOnInit() {
     if (this.Authservice.isUserLoggedIn()) {
-      //this.Authservice.enableHistory=this.enableReferPatient;
-      this.router.navigate(["user/menu"]);
+          this.router.navigate(["user/menu"]);
     }
     this.loginForm = this.formBuilder.group({
       Username: new FormControl('', Validators.required),
@@ -51,16 +48,15 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     } else {
-      //this.Authservice.enableHistory=this.enableReferPatient;
+      
       let resp = this.Authservice.userAuthenticate(this.username, this.password);
       resp.subscribe(data => {
         this.Authservice.registerSuccessfulLogin(this.username, this.password);
-        // this.service.userDetails = data;
         this.invalidLogin = false;
         this.loginSuccess = true;
         this.successMessage = 'Login Successful.';
         this.message = data;
-        this.router.navigate(["user/menu"])
+        this.router.navigate(["/"])
       }, () => {
         this.invalidLogin = true;
         this.loginSuccess = false;
