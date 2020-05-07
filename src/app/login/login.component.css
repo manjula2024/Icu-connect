@@ -65,7 +65,7 @@ span{
 	vertical-align: middle;
 }
 
-#login_pg .login_form {
+#login_pg  {
 	display: inline-block;
 	width: 380px;
 	color: #fff;
@@ -73,7 +73,7 @@ span{
 	text-align: left;
 }
 
-#login_pg .login_form .fa {
+#login_pg .fa {
 	font-size: 35px;
 	color: white;
  margin-left: 200px;
@@ -83,18 +83,18 @@ span{
 .pull-right{
 	position: fixed;
 }
-#login_pg .login_form .header {
+#login_pg .header {
 	display: table;
 	width: 100%;
 	min-height: 30px;
 	background-color: #122b40;
 }
 
-#login_pg .login_form .header .form_title {
+#login_pg .header .form_title {
 	margin-top: 5px;
 }
 
-#login_pg .login_form .header p {
+#login_pg .header p {
 	display: table-cell;
 	vertical-align: middle;
 	padding: 30px 25px;
@@ -105,7 +105,7 @@ span{
 }
 
 
-#login_pg .login_form .login_body {
+#login_pg .login_body {
 	position: relative;
 	display: block;
 	min-height: 250px;
@@ -114,22 +114,22 @@ span{
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
-#login_pg .login_form .input_row {
+#login_pg .input_row {
 	padding: 13px 25px 0 25px;
 }
 
-#login_pg .login_form .input_row:last-child {
+#login_pg .input_row:last-child {
 	padding-bottom: 40px;
 	padding-top: 20px;
 }
 
-#login_pg .login_form .input_row .fa {
+#login_pg .input_row .fa {
 	font-size: 14px;
 	color: #ccc;
 	margin-left:1px;
 }
 
-#login_pg .login_form .submit {
+#login_pg .submit {
 	font-size: 16px;
 	background: #2e6da4;
 	border-color: #2e6da4;
