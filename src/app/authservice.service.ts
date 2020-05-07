@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -19,8 +19,12 @@ export class AuthserviceService {
 
   userAuthenticate(username: String, password: String) {
     return this.http.get(`http://localhost:9010/login`,
-      { headers: { authorization: this.createBasicAuthToken(username, password) } }) }
-
+      { headers: { authorization: this.createBasicAuthToken(username, password) } }).pipe(map((res) => {
+        this.userName = username;
+        this.passWord = password;
+        this.registerSuccessfulLogin(username, password);
+      }));
+    }
     registerSuccessfulLogin(username, password) {
     this.user = username;
     sessionStorage.setItem(this.USER_NAME_SESSION_ATTRIBUTE_NAME, username)
