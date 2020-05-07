@@ -8,11 +8,11 @@
                 <div class="login_body">
                     <div class="input_row" style="padding-top: 25px;">
                         <label class="lbl"><i class="fa fa-user"></i>&nbsp;<span>UserName</span></label><br>
-                        <input class="form-control input-sm" type="text" ng-model="userCredentials.username"/>
+                        <input class="form-control input-sm" type="text" ng-model="userCredentials.username" required/>
                     </div>
                     <div class="input_row">
                         <label class="lbl"><i class="fa fa-eye"></i>&nbsp;<span>Password</span></label><br>
-                        <input class="form-control input-sm" type="password" ng-model="userCredentials.password"/>
+                        <input class="form-control input-sm" type="password" ng-model="userCredentials.password" required/>
                      	<div class="failure">{{invalid}}</div>
                     </div><br>
                      <div class="row justify-content-center">

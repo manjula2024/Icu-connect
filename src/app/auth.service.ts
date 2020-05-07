@@ -6,6 +6,9 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
+  authService(username: string, password: string) {
+    throw new Error("Method not implemented.");
+  }
   
   // BASE_PATH: 'http://localhost:9010'
   USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser'
