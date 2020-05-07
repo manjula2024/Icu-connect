@@ -1,6 +1,7 @@
 <div class="login_container">
     <section id="login_pg">
-                   <form  [formGroup]="loginForm" >
+        <div class="form_cover">
+            <form class="login_form" >
                 <div class="header" style="border-radius: 6px 6px 0 0">
                     <h4 style="margin-left: 20px;margin-right: 10px;"><span class="form_title ">ICU CONNECT</span> <span class="pull-right"><i class="fa fa-lock" aria-hidden="true"></i></span> </h4>
                 </div>
@@ -8,24 +9,17 @@
                 <div class="login_body">
                     <div class="input_row" style="padding-top: 25px;">
                         <label class="lbl"><i class="fa fa-user"></i>&nbsp;<span>UserName</span></label><br>
-                        <input class="input-sm" type="text" [ngClass]="{ 'is-invalid': submitted && fval.Username.errors }" name="username"
-                        [(ngModel)]="username"  required />
-                        <div *ngIf="submitted && fval.Username.errors" class="invalid-feedback">
-                            <div *ngIf="fval.Username.errors.required">
-                                User Name is required
-                            </div>
-                        </div>
-                    </div>
+                        <input class="input-sm" type="text"  [(ngModel)]="username" placeholder="Enter User Name"
+                        name="username"  required />
+                </div>
                    
 
                     <div class="input_row">
                         <label class="lbl"><i class="fa fa-eye"></i>&nbsp;<span>Password</span></label><br>
                         <input class="input-sm" type="password" 
-                        [ngClass]="{ 'is-invalid': submitted && fval.Password.errors }" 
-                        [(ngModel)]="password"  required/>
-                        <div *ngIf="submitted && fval.Password.errors" class="invalid-feedback">
-                            <div *ngIf="fval.Password.errors.required">Password is required</div>
-                        </div>
+                        [(ngModel)]="password" id="password" placeholder="Enter password"
+                       name="password"  required/>
+                       
                     </div><br><br>
                    
                 
@@ -34,7 +28,9 @@
                             style="width: 88%;margin-left: 23px;  color: white; background: #0097a7; font-family: 'calibri'; font-size: 1.2rem;"
                             mat-raised-button (click)="register()">Submit</button>
                     </div>
-                    <div class="row" *ngIf="showMsg" style="display: inline;text-align: center;">
+                    <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+                    <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}}</div>
+                    <!-- <div class="row" *ngIf="showMsg" style="display: inline;text-align: center;">
                         <div class="col-12">
                             <p class="alert alert-success">
                                 <strong>Your Details Successfully submitted..!</strong>
@@ -47,10 +43,10 @@
                                 <strong>{{error}}</strong>
                             </p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </form>
-        
+        </div>
     </section>
 </div>
 

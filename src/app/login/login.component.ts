@@ -11,13 +11,8 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
-  loginForm: FormGroup;
-  submitted = false;
-  username: String;
-  password: String;
-  message: any;
-  error = '';
+  username: string;
+  password : string;
   errorMessage = 'Invalid Credentials';
   successMessage: string;
   invalidLogin = false;
@@ -25,45 +20,23 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private formBuilder: FormBuilder,
-     private router: Router, 
-     private Authservice: AuthserviceService
-    ) { }
+    private router: Router,
+    private authenticationService: AuthserviceService) {   }
 
   ngOnInit() {
-    if (this.Authservice.isUserLoggedIn()) {
-          this.router.navigate(["/"]);
-    }
-    this.loginForm = this.formBuilder.group({
-      Username: new FormControl('', Validators.required),
-      Password: new FormControl('', Validators.required)
-    });
-  }
-  get fval() {
-    return this.loginForm.controls;
   }
 
   register() {
-    this.submitted = true;
-    if (this.loginForm.invalid) {
-      return;
-    } else {
-      
-      let resp = this.Authservice.userAuthenticate(this.username, this.password);
-      resp.subscribe(data => {
-        this.Authservice.registerSuccessfulLogin(this.username, this.password);
-        this.invalidLogin = false;
-        this.loginSuccess = true;
-        this.successMessage = 'Login Successful.';
-        this.message = data;
-        this.router.navigate(["/"])
-      }, () => {
-        this.invalidLogin = true;
-        this.loginSuccess = false;
-      });
-    }
+    this.authenticationService.userAuthenticate(this.username, this.password).subscribe((result)=> {
+      this.invalidLogin = false;
+      this.loginSuccess = true;
+      this.successMessage = 'Login Successful.';
+      this.router.navigate(['/hello-world']);
+    }, () => {
+      this.invalidLogin = true;
+      this.loginSuccess = false;
+    });      
   }
-
 }
  
  
