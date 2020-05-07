@@ -27,15 +27,17 @@ import { MatCardModule } from '@angular/material/card';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
     HttpClientModule
     
     
   ],
   providers: [
-    provide: HTTP_INTERCEPTORS,
-    useClass: HttpInterceptorService,
-    multi: true
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent,LoginComponent]
 })
