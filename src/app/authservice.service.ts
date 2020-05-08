@@ -10,8 +10,8 @@ export class AuthserviceService {
   // BASE_PATH: 'http://localhost:9010'
   USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser'
 
-  public userName: String;
-  public passWord: String;
+  public username: String;
+  public password: String;
   user: any;
 
   constructor(
@@ -20,8 +20,8 @@ export class AuthserviceService {
   userAuthenticate(username: String, password: String) {
     return this.http.get(`http://localhost:9010/login`,
       { headers: { authorization: this.createBasicAuthToken(username, password) } }).pipe(map((res) => {
-        this.userName = username;
-        this.passWord = password;
+        this.username = username;
+        this.password = password;
         this.registerSuccessfulLogin(username, password);
       }));
     }
@@ -33,8 +33,8 @@ export class AuthserviceService {
   logOut() {
     sessionStorage.removeItem(this.USER_NAME_SESSION_ATTRIBUTE_NAME);
     sessionStorage.clear();
-    this.userName = null;
-    this.passWord = null;
+    this.username = null;
+    this.password = null;
   }
 
   createBasicAuthToken(username: String, password: String) {
