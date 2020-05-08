@@ -9,28 +9,24 @@
                 <div class="login_body">
                     <div class="input_row" style="padding-top: 25px;">
                         <label class="lbl"><i class="fa fa-user"></i>&nbsp;<span>UserName</span></label><br>
-                        <input class="input-sm" type="text"  [(ngModel)]="username" placeholder="Enter User Name"
+                        <input class="input-sm" type="text"  [(ngModel)]="username" 
                         name="username"  required />
                 </div>
                    
 
                     <div class="input_row">
                         <label class="lbl"><i class="fa fa-eye"></i>&nbsp;<span>Password</span></label><br>
-                        <input class="input-sm" type="password" 
-                        [(ngModel)]="password" id="password" placeholder="Enter password"
-                       name="password"  required/>
+                        <input class="input-sm" type="password"  [(ngModel)]="password" id="password" name="password"  required/>
                        
                     </div><br><br>
-                   
-                
+                    <div class="alert alert-warning s1" *ngIf='invalidLogin'>{{errorMessage}}</div>
+                    <div class="alert alert-success s1" *ngIf='loginSuccess'>{{successMessage}}</div>
                      <div class="row justify-content-center">
                         <button
-                            style="width: 88%;margin-left: 23px;  color: white; background: #0097a7; font-family: 'calibri'; font-size: 1.2rem;"
-                            mat-raised-button (click)="register()">Submit</button>
+                            style="width: 88%;margin-left: 23px;position:relative; color: white; background: #0097a7; font-family: 'calibri'; font-size: 1.2rem;"
+                            mat-raised-button  (click)="register()">Submit</button>
                     </div>
-                    <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
-                    <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}}</div>
-                    <!-- <div class="row" *ngIf="showMsg" style="display: inline;text-align: center;">
+                                       <!-- <div class="row" *ngIf="showMsg" style="display: inline;text-align: center;">
                         <div class="col-12">
                             <p class="alert alert-success">
                                 <strong>Your Details Successfully submitted..!</strong>

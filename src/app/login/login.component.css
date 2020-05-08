@@ -19,7 +19,7 @@
     text-decoration: none;
     display: inline-block;
      font-weight: bolder;
-  -webkit-border-radius: 5px;
+  /* -webkit-border-radius: 5px; */
     border-radius: 6px;
    
 
@@ -28,24 +28,22 @@
 	padding-top:10px;
 	font-family: calibri;
 }
-.form_title
-{
-	font-size:20px;
-	font-family: Calibri;
-}
+
 span{
 	font-family: Calibri;
+	font-weight:700;
+	max-width:100%;
 }
-.input-sm:hover{
-	-webkit-border-radius: 6px;
-    border-radius: 5px;
+/* .input-sm:hover{
+	/* -webkit-border-radius: 6px; */
+    /* border-radius: 5px;
 	color: rgb(51, 49, 49);
 	
     font-weight: bolder;
     background-color: #fff;
     border: 2px solid gray;
   
-}
+} */ 
 
 #login_pg {
 	display: table;
@@ -87,6 +85,7 @@ span{
 
 #login_pg .login_form .header .form_title {
 	margin-top: 5px;
+	font-size:18px;
 }
 
 #login_pg .login_form .header p {
@@ -98,21 +97,29 @@ span{
 	font-weight: 700;
 	line-height: 17px;
 }
-button{
+/* button{
 	width: 88%;margin-left: 23px; 
 	 color: white;
 	  background: #0097a7;
 	   font-family: 'calibri'; 
 	   font-size: 1.2rem;
-}
+} */
 
 #login_pg .login_form .login_body {
 	position: relative;
 	display: block;
-	min-height: 260px;
+	min-height: 280px;
 	width: 100%;
 	border-radius: 0 0 5px 5px;
 	background-color: rgba(0, 0, 0, 0.5);
+}
+.s1{
+	color:red;
+	padding-bottom: 15px;
+	padding-left:28px;
+	font-family:calibri;
+	margin-top:-18px;
+
 }
 
 #login_pg .login_form .input_row {
@@ -132,8 +139,8 @@ button{
 
 #login_pg .login_form .submit {
 	font-size: 16px;
-	background: #2e6da4;
-	border-color: #2e6da4;
+	background: #818283;
+	border-color: grey;
 	color: #fff;
 	position: absolute;
 

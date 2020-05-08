@@ -13,7 +13,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class LoginComponent implements OnInit {
   username: string;
   password : string;
-  errorMessage = 'Invalid Credentials';
+  errorMessage = 'Invalid username or Password';
   successMessage: string;
   invalidLogin = false;
   loginSuccess = false;
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     this.authenticationService.userAuthenticate(this.username, this.password).subscribe((result)=> {
       this.invalidLogin = false;
       this.loginSuccess = true;
-      this.successMessage = 'Login Successful.';
+      this.successMessage = 'Login Successful';
       this.router.navigate(['/']);
     }, () => {
       this.invalidLogin = true;
