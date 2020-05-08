@@ -109,7 +109,7 @@ button{
 #login_pg .login_form .login_body {
 	position: relative;
 	display: block;
-	min-height: 250px;
+	min-height: 260px;
 	width: 100%;
 	border-radius: 0 0 5px 5px;
 	background-color: rgba(0, 0, 0, 0.5);
