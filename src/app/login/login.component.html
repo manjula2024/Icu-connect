@@ -2,20 +2,20 @@
     <section id="login_pg">
         <div class="form_cover">
             <form class="login_form" >
-                <div class="header" style="border-radius: 6px 6px 0 0">
-                    <h4 style="margin-left: 20px;margin-right: 10px;"><span class="form_title ">ICU CONNECT</span> <span class="pull-right"><i class="fa fa-lock" aria-hidden="true"></i></span> </h4>
+                <div class="header" >
+                    <h4><span class="form_title ">ICU CONNECT</span> <span class="pull-right"><i class="fa fa-lock" aria-hidden="true"></i></span> </h4>
                 </div>
                    
                 <div class="login_body">
                     <div class="input_row" style="padding-top: 25px;">
-                        <label class="lbl"><i class="fa fa-user"></i>&nbsp;<span>UserName</span></label><br>
+                        <label class="lbl"><i class="fa fa-user"></i>&nbsp;<span class="user">UserName</span></label><br>
                         <input class="input-sm" type="text"  [(ngModel)]="username" 
                         name="username"  required />
                 </div>
                    
 
                     <div class="input_row">
-                        <label class="lbl"><i class="fa fa-eye"></i>&nbsp;<span>Password</span></label><br>
+                        <label class="lbl"><i class="fa fa-eye"></i>&nbsp;<span class="user">Password</span></label><br>
                         <input class="input-sm" type="password"  [(ngModel)]="password" id="password" name="password"  required/>
                        
                     </div><br><br>
