@@ -39,6 +39,6 @@ import { MatCardModule } from '@angular/material/card';
       multi: true
     }
   ],
-  bootstrap: [AppComponent,LoginComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

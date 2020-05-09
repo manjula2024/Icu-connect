@@ -5,6 +5,7 @@
 	height: 100vh;
 	margin: 0;
 	padding: 0;
+	background-image:url("../../images/login.jpg");
 	
 }
 h4{
@@ -23,7 +24,6 @@ h4{
     text-decoration: none;
     display: inline-block;
      font-weight: bolder;
-  /* -webkit-border-radius: 5px; */
     border-radius: 6px;
    
 
@@ -104,13 +104,6 @@ h4{
 	font-weight: 700;
 	line-height: 17px;
 }
-/* button{
-	width: 88%;margin-left: 23px; 
-	 color: white;
-	  background: #0097a7;
-	   font-family: 'calibri'; 
-	   font-size: 1.2rem;
-} */
 
 #login_pg .login_form .login_body {
 	position: relative;
@@ -152,27 +145,4 @@ h4{
 	color: #fff;
 	position: absolute;
 
-}
-
-@media screen and (max-width: 400px) {
-	#login_pg .login_form {
-		width: 360px;
-	}
-}
-
-@media screen and (max-width: 340px) {
-	#login_pg .login_form {
-		width: 300px;
-	}
-}
-
-@media screen and (max-width: 320px) {
-	#login_pg .login_form {
-		width: 280px;
-	}
-}
-
-.failure {
-	color: red;
-	padding-top: 15px;
 }
