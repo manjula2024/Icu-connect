@@ -19,11 +19,8 @@ export class AuthserviceService {
 
   userAuthenticate(username: String, password: String) {
     return this.http.get(`http://localhost:9010/login`,
-      { headers: { authorization: this.createBasicAuthToken(username, password) } }).pipe(map((res) => {
-        this.username = username;
-        this.password = password;
-        this.registerSuccessfulLogin(username, password);
-      }));
+      { headers:{ 'X-Requested-With': 'XMLHttpRequest', authorization: this.createBasicAuthToken(username, password) } })
+
     }
     registerSuccessfulLogin(username, password) {
     this.user = username;
